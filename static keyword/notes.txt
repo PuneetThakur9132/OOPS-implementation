@@ -1,0 +1,21 @@
+A static data member in C++ is a data member defined in a class that is not instantiated with each object created of the class. Data members defined in a class are usually instantiated with every object created of the class. That is, each object of the class will have their own instances or copies of the data members defined in the class. However, if a data member is initialized with the static keyword, that data member will not be instantiated and there shall exist only one copy of that data member for all objects or instances of the class.
+
+A static data member in C++ can be defined by using the static keyword. Outside of classes, the static keyword is used to define elements of the static storage class. A static data member in C++ is declared inside a class but is defined within static member functions or outside the class using a scope resolution operator(::).
+
+A static data member in C++ can be defined by using the static keyword. The static keyword appears before other specifiers like data type, etc. A static data member can be declared in the following way: 
+static data_member;
+
+static data_type identifier;
+
+class A{
+static int x;
+};
+
+The example above declares a static data member x within class A. A non-const, that is, a static data member which is not declared as const in C++ cannot be defined or initialized within the class in which it is declared. It is instead defined outside the class using the scope resolution operator as in the following example: 
+class A{
+      //Declaration
+    static int x;
+};
+  //Defination
+int A::x = 0;
+
